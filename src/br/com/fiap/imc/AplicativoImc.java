@@ -1,39 +1,48 @@
 package br.com.fiap.imc;
 
+import br.com.fiap.imc.teste.Calculadora;
+
+import java.util.Scanner;
+
 public class AplicativoImc {
-
-    private static void calcularImc(){
-
-    }
 
     public static void main(String[] args) {
         System.out.println("CALCULADORA IMC");
 
-        Aluno a1 = new Aluno();
-        Aluno a2 = new Aluno();
-        new Aluno();
+        Scanner leitor = new Scanner(System.in);
 
-        a1.nome = "Pedro";
-        a1.altura = 1.78;
-        a1.peso = 76;
-        a1.email = "pedro@email.com";
+        Aluno a1 = new Aluno();
+        Aluno a3 = new Aluno("Celso", 98);
+
+        System.out.print("Digite o nome: ");
+        Aluno a2 = new Aluno(leitor.nextLine());
+
+        Aluno.idade = 18;
+
+        System.out.print("Digite o nome: ");
+        a1.setNome(leitor.nextLine());
+
+        System.out.print("Digite a altura: ");
+        a1.setAltura(leitor.nextDouble());
+
+        System.out.print("Digite o peso: ");
+        a1.setPeso(leitor.nextInt());
+        //a1.email = "pedro@email.com";
 
         a1.calcularImc();
-        a1.determinarEstado();
+        System.out.println(a1.getImc());
 
-        a2.nome = "Ana";
-        a2.altura = 1.65;
-        a2.peso = 30;
-        a2.email = "ana@email.com";
-
-        a2.calcularImc();
-        a2.determinarEstado();
+//        a2.nome = "Ana";
+//        a2.altura = 1.65;
+//        a2.peso = 30;
+//        a2.email = "ana@email.com";
+//
+//        a2.calcularImc();
 
         a1.exibirDados();
         a2.exibirDados();
-        a2.exibirDados();
-        a2.exibirDados();
-        a2.exibirDados();
+
+
 
     }
 
